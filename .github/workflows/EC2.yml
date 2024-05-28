@@ -8,13 +8,13 @@ jobs:
    EC2:
      runs-on: ubuntu-latest
      steps:
+      - uses: actions/checkout@v4.0.0
       - name: Download a Build Artifact
         uses: actions/download-artifact@v3.0.0
         with:
       # Artifact name
           name: programa
-      - uses: actions/checkout@v3
-       
+      
       - name: Deploy to Staging server
         uses: easingthemes/ssh-deploy@main
         env:
@@ -25,7 +25,7 @@ jobs:
           EXCLUDE: "postgres-data"
 
       - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
