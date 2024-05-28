@@ -21,7 +21,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: /home/${{ secrets.REMOTE_TARGET }}
+          TARGET: /home/${{ secrets.REMOTE_USER }}
           EXCLUDE: "postgres-data"
 
       - name: executing remote ssh commands using password
