@@ -1,7 +1,11 @@
 name: Docker
 
 on:
-  workflow_call:
+ push:
+    branches:
+      - Amazon_ECS
+      
+ workflow_call:
 
 jobs:
 
