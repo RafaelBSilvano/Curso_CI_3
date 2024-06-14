@@ -1,10 +1,6 @@
 name: Docker
 
-on:
- push:
-    branches:
-      - Amazon_ECS
-      
+on:    
  workflow_call:
 
 jobs:
@@ -46,4 +42,4 @@ jobs:
     # Push is a shorthand for --output=type=registry
         push: true
     # List of tags
-        tags: rafaelbsilvano/go_ci:${{github.run_number}}
+        tags: rafaelbsilvano/go_ci:${{github.run_name}}
