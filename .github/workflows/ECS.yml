@@ -5,7 +5,7 @@ on:
 
 jobs:
 
-  EC2:
+  ECS:
     runs-on: ubuntu-latest
     steps:
      - name: Configurando credenciais da AWS
