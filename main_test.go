@@ -35,6 +35,10 @@ func DeletaAlunoMock() {
 	database.DB.Delete(&aluno, ID)
 }
 
+func init() {
+	database.ConectaComBancoDeDados()
+}
+
 func TestVerificaStatusCodeDaSaudacaoComParametro(t *testing.T) {
 	r := SetupDasRotasDeTeste()
 	r.GET("/:nome", controllers.Saudacoes)
@@ -48,7 +52,6 @@ func TestVerificaStatusCodeDaSaudacaoComParametro(t *testing.T) {
 }
 
 func TestListaTodosOsAlunosHanlder(t *testing.T) {
-	database.ConectaComBancoDeDados()
 	CriaAlunoMock()
 	defer DeletaAlunoMock()
 	r := SetupDasRotasDeTeste()
@@ -60,7 +63,6 @@ func TestListaTodosOsAlunosHanlder(t *testing.T) {
 }
 
 func TestBucaAlunoPorCPFHandler(t *testing.T) {
-	database.ConectaComBancoDeDados()
 	CriaAlunoMock()
 	defer DeletaAlunoMock()
 	r := SetupDasRotasDeTeste()
@@ -72,7 +74,6 @@ func TestBucaAlunoPorCPFHandler(t *testing.T) {
 }
 
 func TestBuscaAlunoPorIDHandler(t *testing.T) {
-	database.ConectaComBancoDeDados()
 	CriaAlunoMock()
 	defer DeletaAlunoMock()
 	r := SetupDasRotasDeTeste()
@@ -90,7 +91,6 @@ func TestBuscaAlunoPorIDHandler(t *testing.T) {
 }
 
 func TestDeletaAlunoHandler(t *testing.T) {
-	database.ConectaComBancoDeDados()
 	CriaAlunoMock()
 	r := SetupDasRotasDeTeste()
 	r.DELETE("/alunos/:id", controllers.DeletarAluno)
@@ -102,7 +102,6 @@ func TestDeletaAlunoHandler(t *testing.T) {
 }
 
 func TestEditaUmAlunoHandler(t *testing.T) {
-	database.ConectaComBancoDeDados()
 	CriaAlunoMock()
 	defer DeletaAlunoMock()
 	r := SetupDasRotasDeTeste()
