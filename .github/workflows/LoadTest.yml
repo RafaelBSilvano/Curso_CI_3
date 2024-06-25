@@ -18,3 +18,7 @@ jobs:
         aws-region: us-east-2
         
     - run: gi clone http://github.com/leollo98/Infra_CI
+
+    - name: HashiCorp - Setup Terraform
+      uses: hashicorp/setup-terraform@v2.0.3
+              
