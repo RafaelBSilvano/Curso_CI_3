@@ -17,7 +17,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.CHAVE_SECRETA }}
         aws-region: us-east-2
 
-    - run:  https://github.com/leollo98/Infra_CI_Kubernetes.git
+    - run:  https://github.com/RafaelBSilvano/Infra_CI_Kubernetes.git
 
     - name: HashiCorp - Setup Terraform
       uses: hashicorp/setup-terraform@v2.0.3
