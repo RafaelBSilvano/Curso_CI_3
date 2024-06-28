@@ -23,7 +23,7 @@ jobs:
       uses: hashicorp/setup-terraform@v2.0.3
       
     - run: terraform -chdir=Infra_CI_Kubernetes/env/Homolog init
-
+    
     - run: terraform -chdir=Infra_CI_Kubernetes/env/Homolog destroy -auto-approve
     
     - run: return 1
@@ -50,5 +50,3 @@ jobs:
     - run: kubectl create secret generic port --from-literal=PORT=8000
 
     - run: kubectl apply -f Infra_CI_Kubernetes/go.yaml
-
-    
