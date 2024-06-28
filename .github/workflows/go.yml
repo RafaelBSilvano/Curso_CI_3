@@ -79,5 +79,6 @@ jobs:
     
   Deploy_EKS:
      needs: docker
+     if: ${{ github.ref_name =='Amazon_ECS' }}
      uses: ./.github/workflows/EKS.yml
      secrets: inherit
