@@ -1,17 +1,17 @@
-FROM ubuntu:latest
+#FROM ubuntu:latest
 
-EXPOSE 8000
+#EXPOSE 8000
 
-WORKDIR /app
+#WORKDIR /app
 
-ENV HOST=localhost DBPORT=5432
+#ENV HOST=localhost DBPORT=5432
 
-ENV USER=root PASSWORD=root DBNAME=root
+#ENV USER=root PASSWORD=root DBNAME=root
 
-COPY ./main main
+#COPY ./main main
 
-RUN chmod +x main
+#RUN chmod +x main
 
-COPY ./templates/ templates/
+#COPY ./templates/ templates/
 
-CMD [ "./main" ]
+#CMD [ "./main" ]
