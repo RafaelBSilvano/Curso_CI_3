@@ -1,45 +1,45 @@
-name: Docker
+#name: Docker
 
-on:    
- workflow_call:
+#on:    
+ #workflow_call:
 
-jobs:
+#jobs:
 
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
+  #docker:
+    #runs-on: ubuntu-latest
+    #steps:
+    #- uses: actions/checkout@v3
 
-    - name: setup Docker Build
-      uses: docker/setup-buildx-action@v2.0.0
+    #- name: setup Docker Build
+      #uses: docker/setup-buildx-action@v2.0.0
       
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v3.0.0
-      with:
+    #- name: Download a Build Artifact
+      #uses: actions/download-artifact@v3.0.0
+      #with:
     # Artifact name
-        name: programa
+        #name: programa
       
-    - name: Docker Login
+    #- name: Docker Login
   # You may pin to the exact commit or the version.
   # uses: docker/login-action@49ed152c8eca782a232dede0303416e8f356c37b
-      uses: docker/login-action@v2.0.0
-      with:
+      #uses: docker/login-action@v2.0.0
+      #with:
     # Username used to log against the Docker registry
-        username: rafaelbsilvano
+        #username: rafaelbsilvano
     # Password or personal access token used to log against the Docker registry
-        password: ${{ secrets.PASSWORD_DOCKER_HUB }}
+        #password: ${{ secrets.PASSWORD_DOCKER_HUB }}
         
         
-    - name: Build and push Docker images
+    #- name: Build and push Docker images
   # You may pin to the exact commit or the version.
   # uses: docker/build-push-action@e551b19e49efd4e98792db7592c17c09b89db8d8
-      uses: docker/build-push-action@v3.0.0
-      with:
+      #uses: docker/build-push-action@v3.0.0
+      #with:
     # Build's context is the set of files located in the specified PATH or URL
-        context: .
+        #context: .
     # Path to the Dockerfile
-        file: ./Dockerfile
+        #file: ./Dockerfile
     # Push is a shorthand for --output=type=registry
-        push: true
+        #push: true
     # List of tags
-        tags: rafaelbsilvano/go_ci:${{github.run_number}}
+        #tags: rafaelbsilvano/go_ci:${{github.run_number}}
